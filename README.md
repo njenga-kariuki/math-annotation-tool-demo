@@ -2,9 +2,9 @@
 
 ## Project Overview
 
-This is a test implementation of a hypothetical math annotation workflow designed to improve AI mathematical reasoning capabilities. The tool demonstrates how human feedback could be used to enhance LLM performance on complex math problems through a structured annotation process.
+An application for reviewing AI-generated math solutions, identifying the first reasoning error, and guiding a model through successive revisions. It makes the human feedback process explicit: error classification, targeted guidance, revised answers and a stored annotation history.
 
-This prototype is not intended for production use but rather serves as a proof-of-concept for how human annotators might interact with AI-generated solutions to identify errors, provide guidance, and track improvement through iterations.
+The project explores the design of a human annotation workflow. It records individual revisions and interventions; it does not establish a measured improvement in model performance.
 
 ## Functionality
 
@@ -46,3 +46,11 @@ This prototype demonstrates the following workflow:
 2. When a problem is selected, Claude generates an initial solution
 3. Annotator feedback is recorded and sent to Claude for solution revision
 4. Complete annotation history is stored for future analysis
+
+## Project status and local setup
+
+Built in March–April 2025. The repository preserves the annotation interface, revision loop and database setup scripts from that implementation.
+
+For local exploration, install frontend dependencies with `npm ci` and server dependencies with `npm ci --prefix server`. Configure the server using [server/.env.example](server/.env.example), then review the schema and seed scripts in `server/src/scripts/`. The root `npm run dev` command starts both development processes.
+
+Review the frontend/server port configuration, model IDs, dependency versions and database access rules before connecting current services. The published source has not been revalidated end to end against today's APIs.
